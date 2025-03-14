@@ -1,12 +1,23 @@
-#include <stdio.h> 
-struct jsu { 
-  char nae[12]; 
-  int os, db, hab, hhab; 
-}; 
-int main() { 
-  struct jsu st[3] = { {" 1", 95, 88}, {" 2", 84, 91}, {" 3", 86, 75} }; 데이터 데이터 데이터  struct jsu* p; 
-  p = &st[0]; 
-  (p + 1)->hab = (p + 1)->os + (p + 2)->db; 
-  (p + 1)->hhab = (p + 1)->hab + p->os + p->db; 
-  printf("%d", (p + 1)->hab + (p + 1)->hhab); 
+#include <stdio.h>
+struct jsu { // 1. 구조체 'jsu' 선언
+  char nae[12]; // 2. 구조체 'jsu'의 문자 배열 'nae' 선언
+  int os, db, hab, hhab; // 3. 구조체 'jsu'의 정수형 변수 'os', 'db', 'hab', 'hhab' 선언
+};
+
+int main() {
+  struct jsu st[3] = { {"데이터1", 95, 88}, {"데이터2", 84, 91}, {"데이터3", 86, 75} }; // 4. 구조체 배열 'st[3]' 선언 후 다음 값들로 배열 초기화
+  struct jsu* p; // 5. 구조체 'jsu'를 가리키는 포인터 'p' 선언
+  p = &st[0]; // 6. 포인터 'p'에 구조체 'st[0]'의 주소를 할당
+  (p + 1)->hab = (p + 1)->os + (p + 2)->db; // 7. p+1, 즉 구조체 'st[1]'의 요소 'hab'와 'os', p+2, 즉 구조체 'st[2]'의 요소 'db'를 출력 후 계산
+  (p + 1)->hhab = (p + 1)->hab + p->os + p->db; // 8. p+1, 즉 구조체 'st[1]의 요소 'hhab'와 'hab', p, 즉 구조체 'st[0]'의 요소 'os'와 'db'를 출력 후 계산
+  printf("%d", (p + 1)->hab + (p + 1)->hhab); // 9. p+1 = st[1]의 요소 'hab'와 'hhab'를 출력하여 계산한 뒤 결과값을 출력
 }
+
+// 풀이
+
+// 1. struct jsu st[3] = { {"데이터1", 95, 88}, {"데이터2", 84, 91}, {"데이터3", 86, 75} };
+// 2. st[0] = {"데이터1", 95, 88}; st[1] = {"데이터2", 84, 91}; st[2] = {"데이터3", 86, 75};
+// 3. (p + 1)->hab = (p + 1)->os + (p + 2)->db => st[1]->hab = st[1]->os + st[2]->db => st[1]->hab = 84 + 75 = 159
+// 4. (p + 1)->hhab = (p + 1)->hab + p->os + p->db; => st[1]->hhab = st[1]->hab + st[0]->os + st[0]->db => st[1]->hhab = 159 + 95 + 88 = 342
+// 5. (p + 1)->hab + (p + 1)->hhab => st[1]->hab + st[1]->hhab = 159 + 342 = 501
+// 6. printf("%d", (p + 1)->hab + (p + 1)->hhab); => '501' 출력
