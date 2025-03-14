@@ -1,7 +1,7 @@
 #include <stdio.h> 
 main() { 
   struct insa { // 1. 구조체 'insa' 선언
-    char name[10];  // 2. 구조체 'insa'의 배열 'name[10]' 선언
+    char name[10];  // 2. 구조체 'insa'의 문자 배열 'name[10]' 선언
     int age; // 3. 구조체 'insa'의 정수형 변수 'age' 선언 
   } a[] = { "Kim", 28, "Lee", 38, "Park", 42, "Choi", 31 }; // 4. 초기화값에 따른 구조체 4개를 요소로 가진(a[4]) 구조체 배열 a[] 선언
   struct insa* p; // 5. 구조체 insa를 가리키는 포인터 'p' 선언
