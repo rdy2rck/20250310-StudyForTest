@@ -2,6 +2,29 @@
 int len(char* p);
 
 int main() {
+  char* p1 = "2022";
+  char* p2 = "202207";
+  int a = len(p1);
+  int b = len(p2);
+  printf("%d", a+b);
+}
+
+int len(char* p) {
+  int r = 0;
+  while (*p != '\0') {
+    p++;
+    r++;
+  }
+  return r;
+}
+
+
+
+
+// 풀이
+int len(char* p);
+
+int main() {
   char* p1 = "2022"; // 1. 문자열 "2022"의 시작 주소를 p1에 포인터로 저장
   char* p2 = "202207"; // 2. 문자열 "202207"의 시작 주소를 p2에 포인터로 저장
   int a = len(p1); // 8. p1 호출 & 문자열 "2022"의 길이 대입

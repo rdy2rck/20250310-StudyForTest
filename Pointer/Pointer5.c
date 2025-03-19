@@ -1,5 +1,17 @@
 #include <stdio.h> 
 main() { 
+  char* p = "KOREA";
+  printf("%s\n", p);
+  printf("%s\n", p + 3);
+  printf("%c\n", *p);
+  printf("%c\n", *(p + 3));
+  printf("%c\n", *p + 2);
+}
+
+
+
+// 풀이
+main() { 
   char* p = "KOREA"; // 1. 문자열 "KOREA"의 첫 번째 문자 'K'를 가리키는 포인터 p를 선언
   printf("%s\n", p); // 2. 포인터 p가 가리키는 주소 "K"부터 시작해서 문자열 끝인 null 문자('\0')까지의 문자열을 출력 => "KOREA" 출력
   printf("%s\n", p + 3); // 3. 포인터 p가 가리키는 주소 "K"에서 3칸 더 이동한 주소 "E"에서 시작해서 null 문자('\0')까지의 문자열을 출력 => "EA" 출력

@@ -1,5 +1,21 @@
 #include <stdio.h> 
 main() { 
+  struct insa {
+    char name[10];
+    int age;
+  } a[] = { "Kim", 28, "Lee", 38, "Park", 42, "Choi", 31 };
+  struct insa* p;
+  p = a;
+  p++;
+  printf("%s\n", p->name);
+  printf("%d\n", p->age);
+}
+
+
+
+
+// 풀이
+main() { 
   struct insa { // 1. 구조체 'insa' 선언
     char name[10];  // 2. 구조체 'insa'의 문자 배열 'name[10]' 선언
     int age; // 3. 구조체 'insa'의 정수형 변수 'age' 선언 

@@ -1,4 +1,18 @@
 #include <stdio.h> 
+struct A {
+  int n;
+  int g;
+}; 
+main( ) { 
+  struct A st[2];
+  for (int i = 0; i < 2; i++) {
+    st[i].n = i;
+    st[i].g = i + 1;
+  } 
+  printf("%d", st[0].n + st[1].g);
+}
+
+// 풀이
 struct A {  // 1. 구조체 'A' 정의 선언
   int n; // 2. 구조체 'A'의 정수형 변수 'n' 선언
   int g; // 3. 구조체 'A'의 정수형 변수 'g' 선언
@@ -11,9 +25,6 @@ main( ) {
   } 
   printf("%d", st[0].n + st[1].g); // 8. 구조체 배열 st[0]의 변수 'n'과 구조체 배열 st[1]의 변수 'g'를 합한 정수값을 출력
 }
-
-// 풀이
-
 // 1. struct A st[2] = st[0] = [n, g] & st[1] = [n, g]
 // 2. i = 0 => st[0].n = 0; & st[0].g = 0 + 1 = 1;
 // 3. i = 1 => st[1].n = 1; & st[1].g = 1 + 1 = 2;

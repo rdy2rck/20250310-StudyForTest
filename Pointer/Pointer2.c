@@ -1,5 +1,23 @@
 #include <stdio.h>
 int main() {
+  int a[4] = {0, 2, 4, 8};
+  int b[3];
+  int* p;
+  int sum = 0;
+
+  for (int i=1; i<4; i++) {
+    p = a+i;
+    b[i-1] = *p - a[i-1];
+    sum = sum + b[i-1] + a[i];
+  printf("%d", sum);
+  }
+}
+
+
+
+
+// 풀이
+int main() {
   int a[4] = {0, 2, 4, 8}; // 1. 배열 a를 {0, 2, 4, 8}로 초기화
   int b[3]; // 2. 크기가 3인 배열 b를 선언
   int* p; // 3. 포인터 p를 선언

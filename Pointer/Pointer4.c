@@ -1,5 +1,20 @@
 #include <stdio.h> 
 int main() { 
+  int ary[3];
+  int s = 0;
+  *(ary + 0) = 1;
+  ary[1] = *(ary + 0) + 2;
+  ary[2] = *ary + 3;
+  for (int i = 0; i < 3; i++)
+    s = s + ary[i];
+  printf("%d", s);
+}
+
+
+
+
+// 풀이
+int main() { 
   int ary[3]; // 1. 크기가 3인 정수형 배열 ary를 선언
   int s = 0; // 2. 정수형 변수 s를 0으로 초기화
   *(ary + 0) = 1; // 3. 'ary + 0 => ary[0]의 주소(&ary[0])'이므로, *(ary + 0) = *(*ary[0]) = ary[0] = 1 이 됨
