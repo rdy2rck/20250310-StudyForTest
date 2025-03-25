@@ -6,9 +6,6 @@ public class Java2 {
   public static void main(String[] args) {
     System.out.print(Java2.check(1));
   }
-  ('a') String check(int num){
-    return (num >= 0) ? "positive" : "negative";
-  }
 }
 
 // 풀이

@@ -2,7 +2,7 @@
 
 package Java;
 
-public class Java10 {
+public class Java7 {
   public static void main(String[] args) {
     int w = 3, x = 4, y = 3, z = 5; // 1. 정수형 변수 w=3, x=4, y=3, z=5 로 선언 후 초기화
     if((w == 2 | w == y) & !(y > z) & (1 == x ^ y != z)) { // 2. 조건이 참(1)일 경우 if문 실행, 거짓(0)일 경우 else문 실행. 결과값이 참(1)이니 if문 실행
